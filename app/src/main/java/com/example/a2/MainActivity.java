@@ -29,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
             Drawable drawable;
             drawable = ImageDecoder.decodeDrawable(source);
             iv.setImageDrawable(drawable);
-
+            if (drawable instanceof AnimatedImageDrawable) {
                 ((AnimatedImageDrawable) drawable).start();
                 Toast.makeText(getApplicationContext(),
                         "Animation started",
                         Toast.LENGTH_LONG).show();
+        }
+            else Toast.makeText(getApplicationContext(),
+                    "Animation not working!!!",
+                    Toast.LENGTH_LONG).show();
             }
                  catch (IOException e) {
                 e.printStackTrace();
