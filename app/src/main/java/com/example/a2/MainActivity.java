@@ -25,11 +25,9 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.P)
     private void loadGif(ImageView iv)  {
         try {        
-            ImageDecoder.Source source;
-            source = ImageDecoder.createSource(getResources(), R.drawable.ic_splash);
+            ImageDecoder.Source source = ImageDecoder.createSource(getResources(), R.drawable.ic_splash);
 
-            Drawable drawable;
-            drawable = ImageDecoder.decodeDrawable(source);
+            Drawable drawable = ImageDecoder.decodeDrawable(source);
             iv.setImageDrawable(drawable);
             if (drawable instanceof AnimatedImageDrawable) {
                 ((AnimatedImageDrawable) drawable).start();
