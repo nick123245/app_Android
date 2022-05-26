@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                     R.string.text2,
                     Toast.LENGTH_LONG).show();
             }
-                 catch (IOException e) {
-                e.printStackTrace();
+                catch (IOException exception) {
+                exception.printStackTrace();
                 Toast.makeText(getApplicationContext(),
-                        "IOException: \n" + e.getMessage(),
+                        "IOException: \n" + exception.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         
