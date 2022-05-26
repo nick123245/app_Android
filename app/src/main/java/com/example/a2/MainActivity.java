@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
             if (drawable instanceof AnimatedImageDrawable) {
                 ((AnimatedImageDrawable) drawable).start();
                 Toast.makeText(getApplicationContext(),
-                        "Animation started",
+                        R.string.text1,
                         Toast.LENGTH_LONG).show();
         }
             else Toast.makeText(getApplicationContext(),
-                    "Animation not working!!!",
+                    R.string.text2,
                     Toast.LENGTH_LONG).show();
             }
                  catch (IOException e) {
