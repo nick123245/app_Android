@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView imageView = findViewById(R.id.splash);
-        
+        try {        
             ImageDecoder.Source source;
             source = ImageDecoder.createSource(getResources(), R.drawable.ic_splash);
 
@@ -30,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Animation started",
                         Toast.LENGTH_LONG).show();
-
+            }
+                 catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(),
+                        "IOException: \n" + e.getMessage(),
+                        Toast.LENGTH_LONG).show();
+            }
         
     }
 }
