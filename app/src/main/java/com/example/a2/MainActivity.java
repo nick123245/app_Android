@@ -18,13 +18,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView imageView = findViewById(R.id.splash);
+        loadGif(imageView);
+    }
+    
+    private void loadGif(ImageView iv)  {
         try {        
             ImageDecoder.Source source;
             source = ImageDecoder.createSource(getResources(), R.drawable.ic_splash);
 
             Drawable drawable;
             drawable = ImageDecoder.decodeDrawable(source);
-            imageView.setImageDrawable(drawable);
+            iv.setImageDrawable(drawable);
 
                 ((AnimatedImageDrawable) drawable).start();
                 Toast.makeText(getApplicationContext(),
